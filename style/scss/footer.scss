@@ -1,0 +1,59 @@
+@import "./var.scss";
+
+.footer{
+  font-family: $ubuntu;
+  height: 360px;
+  background: $very-dark-black-blue;
+
+  &__content{
+    padding: 65px;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  &__box{
+    padding: 0 35px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__box > a{
+    padding-bottom: 20px;
+
+    &:hover{
+      color: #fff;
+    }
+  }
+
+  &__box > p{
+    font-weight: 600;
+    padding-bottom: 40px;
+  }
+
+  a{
+    text-decoration: none;
+    color: $grayish-blue;
+  }
+
+  p{
+    color: #fff;
+  }
+}
+
+// ---------------media-----------------------------
+@media (max-width:700px) {
+  .footer{
+    height: auto;
+    &__box{
+      margin: auto;
+      width: 160px;
+      padding-bottom: 35px;
+    }
+    &__content{
+      flex-direction: column;
+    }
+  }
+}

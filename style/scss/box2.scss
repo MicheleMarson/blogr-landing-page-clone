@@ -1,0 +1,91 @@
+@import "./var.scss";
+
+.box2{
+  width: 100vw;
+  height: 400px;
+  background: linear-gradient(90deg,$very-dark-gray-blue-bg, $very-dark-desaturated-blue-bg);
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(2, 50%);
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+
+  &__title{
+    font-size: 2rem;
+    padding-bottom: 35px;
+    font-weight: 600;
+  }
+
+  &__text{
+    line-height: 30px;
+  }
+
+  &__left{
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__right{
+    z-index: 4;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    max-width: $maxW;
+  }
+
+  &__imgCircle{
+    position: absolute;
+    z-index: 1;
+    bottom: -10%;
+    right: 30%;
+  }
+
+  &__imgMobile{
+    overflow: visible;
+    z-index: 2;
+    position: absolute;
+    top: -60px;
+
+    img{
+      height: 100%;
+    }
+  }
+
+}
+
+@media (max-width:1020px) {
+  .box2{
+    display: flex;
+    height: auto;
+    align-items: center;
+    background:url("../images/bg-pattern-circles.svg") no-repeat,linear-gradient(90deg,$very-dark-gray-blue-bg, $very-dark-desaturated-blue-bg);
+    background-size: contain;
+    background-position: 50% -200px;
+    flex-direction: column;
+
+    &__right{
+      justify-content: end;
+    }
+
+    &__imgCircle{
+      display: none;
+
+      img{
+        width: 100%;
+      }
+    }
+    &__imgMobile{
+      // right: 0;
+      // left: 0;
+      position: initial;
+      height: 300px;
+
+      img{
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

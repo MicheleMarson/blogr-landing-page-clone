@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+.box2 {
+  width: 100vw;
+  height: 400px;
+  background: -webkit-gradient(linear, left top, right top, from(#2c2d3f), to(#3f4164));
+  background: linear-gradient(90deg, #2c2d3f, #3f4164);
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.box2__title {
+  font-size: 2rem;
+  padding-bottom: 35px;
+  font-weight: 600;
+}
+
+.box2__text {
+  line-height: 30px;
+}
+
+.box2__left {
+  position: relative;
+  overflow: hidden;
+}
+
+.box2__right {
+  z-index: 4;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px;
+  max-width: 560px;
+}
+
+.box2__imgCircle {
+  position: absolute;
+  z-index: 1;
+  bottom: -10%;
+  right: 30%;
+}
+
+.box2__imgMobile {
+  overflow: visible;
+  z-index: 2;
+  position: absolute;
+  top: -60px;
+}
+
+.box2__imgMobile img {
+  height: 100%;
+}
+
+@media (max-width: 1020px) {
+  .box2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: url("../images/bg-pattern-circles.svg") no-repeat, -webkit-gradient(linear, left top, right top, from(#2c2d3f), to(#3f4164));
+    background: url("../images/bg-pattern-circles.svg") no-repeat, linear-gradient(90deg, #2c2d3f, #3f4164);
+    background-size: contain;
+    background-position: 50% -200px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .box2__right {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  .box2__imgCircle {
+    display: none;
+  }
+  .box2__imgCircle img {
+    width: 100%;
+  }
+  .box2__imgMobile {
+    position: initial;
+    height: 300px;
+  }
+  .box2__imgMobile img {
+    height: 100%;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=box2.css.map */

@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+.box3 {
+  position: relative;
+  height: 100vh;
+  color: #1f3f5b;
+}
+
+.box3__img {
+  position: absolute;
+  overflow: visible;
+  left: -300px;
+  right: 50%;
+  top: 10%;
+  height: 90%;
+  z-index: -1;
+}
+
+.box3__img img {
+  height: 90%;
+}
+
+.box3__title {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 35px;
+}
+
+.box3__text {
+  line-height: 30px;
+}
+
+.box3__box {
+  max-width: 560px;
+  margin: 40px 0;
+}
+
+.box3__content {
+  height: 100%;
+  width: 50%;
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box3__img--mobile {
+  display: none;
+}
+
+@media (max-width: 1020px) {
+  .box3 {
+    height: auto;
+  }
+  .box3__content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    float: none;
+    width: auto;
+  }
+  .box3__img--mobile {
+    display: block;
+    padding: 70px 10px 30px 10px;
+  }
+  .box3__img {
+    position: initial;
+  }
+  .box3__img img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .box3__img--desktop {
+    display: none;
+  }
+}
+/*# sourceMappingURL=box3.css.map */

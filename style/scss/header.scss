@@ -1,0 +1,336 @@
+@import "./var.scss";
+@mixin btnHover {
+  background: $very-light-red;
+  color: #fff;
+}
+
+// -------------------animation---------------
+@keyframes arrowDown {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+// -------------------animation---------------
+
+.header{
+  position: relative;
+  height: 600px;
+  background: linear-gradient(90deg, $very-light-red-bg, $light-red-bg);
+  z-index: 1;
+  border-bottom-left-radius: 100px;
+
+  p{
+    font-size: $def-font;
+    font-weight: 600;
+  }
+
+  button{
+    font-family: $ubuntu;
+    min-width: 140px;
+    transition: .150s ease-in-out;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+  }
+
+  &__bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  &__navBox{
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+  }
+  &__linkBox{
+    display: none;
+  }
+
+  &__nav{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header{
+      &__logo{
+        padding: 30px;
+      }
+
+      &__menu{
+        padding: 30px;
+        display: none;
+      }
+
+      &__link{
+        cursor: pointer;
+
+        span{
+          display: flex;
+          align-items: center;
+        }
+
+        &:hover span{
+          animation: arrowDown .7s;
+        }
+
+      }
+
+      &__navContent{
+        a, p{
+          color: #fff;
+        }
+      }
+
+      &__navLeft{
+        display: flex;
+        align-items: center;
+
+        div{
+          margin-right: 30px;
+        }
+      }
+
+      &__navRight{
+        display: flex;
+        padding: 30px;
+
+        button{
+          padding: 15px 40px;
+        }
+
+        .header{
+          &__signup{
+            color: $light-red;
+
+            &:hover{
+              @include btnHover()
+            }
+          } 
+          &__login{
+            color: white;
+            background: transparent;
+          }
+        }
+      }
+
+      &__link{
+        display: flex;
+        align-items: center;
+
+        &--arrowLight{
+          display: block;
+        }
+
+        &--arrowDark{
+          display: none;
+        }
+
+      }
+      &__link > *{
+        padding: 6px;
+      }
+    }
+  }
+
+  &__article{
+    min-height: calc(100% - 150px);
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+
+    .header{
+
+      
+      &__articleBox{
+        color: #fff;
+        & > *{
+          padding: 10px;
+        }
+
+        h1{
+          font-size: 3.6rem;
+        }
+      }
+
+      &__btns{
+        padding: 40px 0;
+
+        button{
+          padding: 17px;
+          margin: 0 10px;
+        }
+      }
+
+      &__startForFree{
+        color: $light-red;
+
+        &:hover{
+          @include btnHover()
+        }
+      }
+
+      &__learnMore{
+        background: transparent;
+        border: 2px solid #fff;
+
+        &:hover{
+          background: #fff;
+          color: $light-red;
+        }
+      }
+
+      &__desc{
+        font-weight: 300;
+      }
+    }
+  }
+
+  // ------------------------active state tablet -----------------------------
+
+  &__navContent.active{
+    position: relative;
+    .header__linkBox{
+      border-radius: 10px;
+      position: absolute;
+      background: white;
+      display: block;
+      display: flex;
+      flex-direction: column;
+      left: 0;
+      padding: 10px 20px;
+  
+      a{
+        text-decoration: none;
+        padding: 10px 0;
+        color: #000;
+
+        &:hover{
+          color: gray;
+        }
+      }
+    }
+
+    .header__link > span{
+      transform: rotate(180deg) translateY(4px);
+    }
+  } 
+
+
+  // ------------------------active state mobile -----------------------------
+  &__navBox.active{
+    background: white;
+    position: absolute;
+    display: flex;
+    top: 150px;
+    left: 20px;
+    right: 20px;
+    flex-direction: column;
+    border-radius: 10px;
+
+    p{
+      color: $very-dark-blue;
+    }
+
+    .header__navLeft{
+      flex-direction: column;
+    }
+    .header__navRight{
+      border-top: 1px solid lightgray;
+      flex-direction: column;
+    }
+  }
+
+}
+
+
+// ----------------------------media -------------------
+// @media (max-width:950px) {
+  
+// }
+
+@media (max-width:1020px) {
+  .header{
+    height: auto;
+    &__link--arrowLight{
+      display: none !important;
+    }
+
+    &__link--arrowDark{
+      display: inline !important;
+    }
+
+    &__navContent{
+      // align-content: center;
+      // text-align: center;
+      width: 100%;
+      margin: 20px 0 !important;
+    }
+
+    &__link{
+      justify-content: center;
+      margin: auto !important;
+    }
+
+    &__navBox{
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.411);
+      display: none;
+    }
+    &__menu{
+      display: block !important;
+    }
+
+    &__navRight{
+      button{
+        margin: 10px;
+      }
+    }
+
+    &__signup{
+      margin: auto !important;
+      max-width: 200px;
+      background: linear-gradient(90deg, $very-light-red-bg, $light-red-bg) !important;
+      
+      p{
+        color: #fff !important;
+      }
+    }
+
+    &__navContent.active{
+      .header__link{
+        p{
+          color: $very-dark-grayish-blue;
+        }
+      }
+      .header__linkBox{
+        background: #e7e7e7;
+        position: static;
+        padding: 10px 0;
+        margin: 0 20px;
+
+        a{
+          color: $very-dark-grayish-blue;
+        }
+      }
+    }
+  }
+}
